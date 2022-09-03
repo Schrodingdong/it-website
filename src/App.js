@@ -27,6 +27,7 @@ const theme = createTheme({
             background: "linear-gradient(180deg, rgba(51,106,171,1) 0%, rgba(63,114,175,1) 100%)",
         },
         h1:{
+            fontSize: "6rem",
             fontWeight: 800
         },
         codeLike:{
@@ -35,6 +36,12 @@ const theme = createTheme({
             fontWeight: 300,
             fontSize: "2rem",
             letterSpacing: "0.3rem"
+        },
+        justifiedText:{
+            fontSize: "35px",
+            fontWeight: 400,
+            textAlign: "justify",
+            textJustify: "inter-word"
         }
     }
 })
