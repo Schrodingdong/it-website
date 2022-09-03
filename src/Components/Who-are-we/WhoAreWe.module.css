@@ -1,0 +1,18 @@
+.WhoAreWe{
+    min-height: fit-content;
+    margin: 5rem 0 ;
+    position :relative;
+
+}
+
+.paragraph{
+    padding-left: 1.5rem;
+    position :relative;
+}
+
+.logo{
+    width: 500px;
+    height: 500px;
+    display: block;
+    margin-left: auto;
+}

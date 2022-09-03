@@ -17,7 +17,7 @@ const headerAppBar = {
 const Navbar = () => {
     return <AppBar position="absolute" color={"transparent"} sx={headerAppBar}>
         <Toolbar >
-            <Container maxWidth={"lg"} sx={headerStyle}>
+            <Container maxWidth={"xl"} sx={headerStyle}>
                 <Link to={"/"}>
                     <Box className={styles.logo}>
                         <img src={ logo } alt={"logo"}/>
