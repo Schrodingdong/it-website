@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes } from "react-router-dom";
 import Accueil from "./pages/Accueil";
 import Event from "./pages/Events";
 import MeetTheTeam from "./pages/MeetTheTeam";
@@ -13,10 +13,17 @@ const theme = createTheme({
             white: "#F9F7F7"
         },
         primary:{
-            main: "#3F72AF"
+            light: "#00c3ff",
+            main: "#3F72AF",
+            darker: "#003688"
         },
         secondary:{
             main: "#E751FF"
+        },
+        text:{
+            primary:"#112D4E",
+            secondary: "rgba(17,45,78,75%)",
+            disabled: "rgba(17,45,78,50%)",
         }
     },
     typography:{
@@ -40,10 +47,9 @@ const theme = createTheme({
             letterSpacing: "0.3rem"
         },
         justifiedText:{
-            fontSize: "35px",
+            fontSize: "1.5rem",
             fontWeight: 400,
-            textAlign: "justify",
-            textJustify: "inter-word"
+            textAlign: "justify"
         }
     }
 })

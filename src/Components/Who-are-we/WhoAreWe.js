@@ -1,13 +1,51 @@
-import {Box, Card, Container, Typography} from "@mui/material";
-
+import {Box, Container, Typography} from "@mui/material";
 import Timeline from "./Timeline";
 import styles from "./WhoAreWe.module.css";
 import logo from "./img/logo.png";
+import {useState} from "react";
+import GlassCard from "../_UI/GlassCard";
+import cardImage1 from "../../static/img/rr.jpg"
+import cardImage2 from "../../static/img/49022249_1125614244278950_7211991186590924800_n.jpg"
+
+const timelineHistory = {
+    2018:{
+        img: cardImage1,
+        caption: "2018 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus."
+    },
+    2019:{
+        img: cardImage2,
+        caption: "2019 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus."
+    },
+    2020:{
+        img: cardImage1,
+        caption: "2020 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus."
+    },
+    2021:{
+        img: cardImage2,
+        caption: "2021 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus."
+    },
+    2022:{
+        img: cardImage1,
+        caption: "2022 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus."
+    },
+    null:{
+        img: null,
+        caption: ""
+    }
+
+}
+
 
 const WhoAreWe = () => {
+    const [ cardYear, setCardYear ] = useState(2018)
+
     return (
         <Container className={styles.WhoAreWe} maxWidth={"xl"} >
-            <Box sx={{ display:"flex", alignItems:"center" }}>
+            <Box sx={{
+                display:"flex",
+                alignItems:"center",
+                gap:"1rem"
+            }}>
                 <Box sx={{ width:"60%" }}>
                     <Typography variant={"h1"}>
                         WHO ARE <Typography variant={"span"} color={"primary"}>WE ?</Typography>
@@ -16,7 +54,7 @@ const WhoAreWe = () => {
                     <Box className={styles.paragraph} sx={{
                         borderLeft : "solid 7px #3F72AF"
                     }}>
-                        <Typography variant={"justifiedText"}>
+                        <Typography  variant={"justifiedText"}>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa. Phasellus imperdiet molestie risus eget ullamcorper.</p>
                         </Typography>
                     </Box>
@@ -25,10 +63,20 @@ const WhoAreWe = () => {
                     <img className={styles.logo} src={ logo } alt={ "logo" }/>
                 </Box>
             </Box>
-            <Box sx={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", height:"50vh"}}>
-                <Timeline/>
+            <Box sx={{
+                display:"flex",
+                flexDirection:"column",
+                justifyContent:"center",
+                alignItems:"center",
+                transition:"0.2s",
+                height:"600px",
+                zIndex:"0"
+            }}>
+                <Timeline cardYear={cardYear} setCardYear={ setCardYear }/>
+                <GlassCard src={timelineHistory[cardYear].img} isShown={cardYear !== null} year={cardYear}>
+                    {timelineHistory[cardYear].caption}
+                </GlassCard>
             </Box>
-
         </Container>
     )
 }

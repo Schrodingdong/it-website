@@ -2,7 +2,6 @@
     min-height: fit-content;
     margin: 5rem 0 ;
     position :relative;
-
 }
 
 .paragraph{
@@ -11,8 +10,9 @@
 }
 
 .logo{
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    max-width: 500px;
     display: block;
     margin-left: auto;
 }
+
