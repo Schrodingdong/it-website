@@ -40,44 +40,47 @@ const WhoAreWe = () => {
     const [ cardYear, setCardYear ] = useState(2018)
 
     return (
-        <Container className={styles.WhoAreWe} maxWidth={"xl"} >
-            <Box sx={{
-                display:"flex",
-                alignItems:"center",
-                gap:"1rem"
-            }}>
-                <Box sx={{ width:"60%" }}>
-                    <Typography variant={"h1"} color={"primary.dark"}>
-                        WHO ARE <Typography variant={"span"} color={"primary"}>WE ?</Typography>
-                    </Typography>
-
-                    <Box className={styles.paragraph} sx={{
-                        borderLeft : "solid 7px #3F72AF"
-                    }}>
-                        <Typography  variant={"justifiedText"} color={"text.primary"}>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa. Phasellus imperdiet molestie risus eget ullamcorper.</p>
+        <div style={{width:"100%", position:"relative", margin:"6rem 0"}}>
+            <Container className={styles.WhoAreWe} maxWidth={"xl"} >
+                <Box sx={{
+                    display:"flex",
+                    alignItems:"center",
+                    gap:"1rem"
+                }}>
+                    <Box sx={{ width:"60%" }}>
+                        <Typography variant={"h1"} color={"primary.dark"}>
+                            WHO ARE <Typography variant={"span"} color={"primary"}>WE ?</Typography>
                         </Typography>
+
+                        <Box className={styles.paragraph} sx={{
+                            borderLeft : "solid 7px #3F72AF"
+                        }}>
+                            <Typography  variant={"justifiedText"} color={"text.primary"}>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa. Phasellus imperdiet molestie risus eget ullamcorper.</p>
+                            </Typography>
+                        </Box>
+                    </Box>
+                    <Box sx={{ width:"40%" }}>
+                        <img className={styles.logo} src={ logo } alt={ "logo" }/>
                     </Box>
                 </Box>
-                <Box sx={{ width:"40%" }}>
-                    <img className={styles.logo} src={ logo } alt={ "logo" }/>
+                <Box sx={{
+                    display:"flex",
+                    flexDirection:"column",
+                    justifyContent:"center",
+                    alignItems:"center",
+                    transition:"0.2s",
+                    height:"600px",
+                    zIndex:"0"
+                }}>
+                    <Timeline cardYear={cardYear} setCardYear={ setCardYear }/>
+                    <GlassCard src={timelineHistory[cardYear].img} isShown={cardYear !== null} year={cardYear}>
+                        {timelineHistory[cardYear].caption}
+                    </GlassCard>
                 </Box>
-            </Box>
-            <Box sx={{
-                display:"flex",
-                flexDirection:"column",
-                justifyContent:"center",
-                alignItems:"center",
-                transition:"0.2s",
-                height:"600px",
-                zIndex:"0"
-            }}>
-                <Timeline cardYear={cardYear} setCardYear={ setCardYear }/>
-                <GlassCard src={timelineHistory[cardYear].img} isShown={cardYear !== null} year={cardYear}>
-                    {timelineHistory[cardYear].caption}
-                </GlassCard>
-            </Box>
-        </Container>
+            </Container>
+        </div>
+
     )
 }
 

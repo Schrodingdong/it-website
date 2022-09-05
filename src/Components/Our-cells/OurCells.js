@@ -1,34 +1,10 @@
 import {Box, Container, Tabs, Tab, Typography} from "@mui/material";
-import { motion } from 'framer-motion';
-import PropTypes from "prop-types";
 import {useState} from "react";
+import TabContent from "./TabContent";
+import TabPanel from "../_UI/TabPanel";
+import src from "./ic_sharp-model-training.png";
 
 
-function TabPanel(props) {
-    const { children, value, index, ...other } = props;
-
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`simple-tabpanel-${index}`}
-            aria-labelledby={`simple-tab-${index}`}
-            {...other}
-        >
-            {value === index && (
-                <Box sx={{ p: 3 }}>
-                    <Typography>{children}</Typography>
-                </Box>
-            )}
-        </div>
-    );
-}
-
-TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
-};
 
 function a11yProps(index) {
     return {
@@ -37,15 +13,16 @@ function a11yProps(index) {
     };
 }
 
-
 const tabSX = (selectedValue, tabValue) => {
     const isSelected = (selectedValue === tabValue)
     var width = (isSelected)? "100%":"90%";
     var borderColor = (isSelected)? "secondary":"divider";
+    var background = (isSelected)? "linear-gradient(90deg,rgba(231,81,255,0.05) 0%, rgba(0,0,0,0) 100% )":null;
     var borderVertical = (tabValue === 0)? 0:"2px solid rgb(0,0,0,20%)";
     return {
         borderLeft: 2,
         borderColor: borderColor,
+        background:background,
         alignItems:"start",
         maxWidth:"none",
         width: width,
@@ -64,32 +41,46 @@ const OurCells = () => {
     };
 
     return (
-        <div style={{width:"100%", position:"relative"}}>
+        <div style={{width:"100%", position:"relative", margin:"6rem 0"}}>
             <Container maxWidth={"xl"}>
                 <Typography variant={"h1"} color={"primary.dark"} align={"right"}>
                     OUR <Typography variant={"span"} color={"primary"}>CELLS</Typography>
                 </Typography>
                 <Box sx={{ display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", marginTop:"80px", height:"700px", width:"60%" }}>
                     <TabPanel value={value} index={0}>
-                        Item One
+                        <TabContent img={src}>
+                            TRAINING - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa. Phasellus imperdiet molestie risus eget ullamcorper
+                        </TabContent>
                     </TabPanel>
                     <TabPanel value={value} index={1}>
-                        Item Two
+                        <TabContent img={src}>
+                            DESIGN - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa. Phasellus imperdiet molestie risus eget ullamcorper
+                        </TabContent>
                     </TabPanel>
                     <TabPanel value={value} index={2}>
-                        Item Three
+                        <TabContent img={src}>
+                            EVENT - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa. Phasellus imperdiet molestie risus eget ullamcorper
+                        </TabContent>
                     </TabPanel>
                     <TabPanel value={value} index={3}>
-                        Item four
+                        <TabContent img={src}>
+                             SPONSORING - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa. Phasellus imperdiet molestie risus eget ullamcorper
+                        </TabContent>
                     </TabPanel>
                     <TabPanel  value={value} index={4}>
-                        Item five
+                        <TabContent img={src}>
+                             CP - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa. Phasellus imperdiet molestie risus eget ullamcorper
+                        </TabContent>
                     </TabPanel>
                     <TabPanel value={value} index={5}>
-                        Item six
+                        <TabContent img={src}>
+                            MEDIA - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa. Phasellus imperdiet molestie risus eget ullamcorper
+                        </TabContent>
                     </TabPanel>
                     <TabPanel value={value} index={6}>
-                        Item seven
+                        <TabContent img={src}>
+                            INFOSEC - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa. Phasellus imperdiet molestie risus eget ullamcorper
+                        </TabContent>
                     </TabPanel>
                     <Tabs
                         orientation="vertical"
@@ -116,10 +107,10 @@ const OurCells = () => {
                         <Tab sx={tabSX(value,0)} label="Training" {...a11yProps(0)}></Tab>
                         <Tab sx={tabSX(value,1)} label="Design" {...a11yProps(1)}></Tab>
                         <Tab sx={tabSX(value,2)} label="Event" {...a11yProps(2)}></Tab>
-                        <Tab sx={tabSX(value,3)} label="Sponsoring" {...a11yProps(1)}></Tab>
-                        <Tab sx={tabSX(value,4)} label="Competitive programing" {...a11yProps(2)}></Tab>
-                        <Tab sx={tabSX(value,5)} label="Media" {...a11yProps(1)}></Tab>
-                        <Tab sx={tabSX(value,6)} label="Infosec" {...a11yProps(2)}></Tab>
+                        <Tab sx={tabSX(value,3)} label="Sponsoring" {...a11yProps(3)}></Tab>
+                        <Tab sx={tabSX(value,4)} label="Competitive programing" {...a11yProps(4)}></Tab>
+                        <Tab sx={tabSX(value,5)} label="Media" {...a11yProps(5)}></Tab>
+                        <Tab sx={tabSX(value,6)} label="Infosec" {...a11yProps(6)}></Tab>
                     </Tabs>
                 </Box>
             </Container>

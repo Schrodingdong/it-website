@@ -3,6 +3,7 @@ import Splashscreen from "../Components/Splashscreen/Splashscreen";
 import WhoAreWe from "../Components/Who-are-we/WhoAreWe";
 import SvgBackground from "../Components/_UI/SvgBackground";
 import OurCells from "../Components/Our-cells/OurCells";
+import OurEvents from "../Components/Our-events/OurEvents";
 
 const Accueil = () => {
     return <>
@@ -10,6 +11,7 @@ const Accueil = () => {
         <Splashscreen/>
         <WhoAreWe/>
         <OurCells/>
+        <OurEvents/>
         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <SvgBackground top={"100vh"} left={"0"}>
             <svg width="1488" height="1488" viewBox="0 0 1488 1488" fill="none" xmlns="http://www.w3.org/2000/svg"
