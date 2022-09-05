@@ -46,7 +46,7 @@ const TimelineDot = (props) => {
                     top: labelPlacement(year),
                     left:"50%",
                     transform:"translateX(-50%)"
-                }} >
+                }} color={"primary.dark"}>
                     {year}
                 </Typography>
             </Box>

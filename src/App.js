@@ -10,12 +10,13 @@ import { createTheme,ThemeProvider } from "@mui/material";
 const theme = createTheme({
     palette:{
         common:{
-            white: "#F9F7F7"
+            white: "#F9F7F7",
+            black: "#112D4E"
         },
         primary:{
             light: "#00c3ff",
             main: "#3F72AF",
-            darker: "#003688"
+            dark: "#112D4E"
         },
         secondary:{
             main: "#E751FF"
@@ -23,7 +24,7 @@ const theme = createTheme({
         text:{
             primary:"#112D4E",
             secondary: "rgba(17,45,78,75%)",
-            disabled: "rgba(17,45,78,50%)",
+            disabled: "rgba(17,45,78,50%)"
         }
     },
     typography:{
@@ -38,6 +39,9 @@ const theme = createTheme({
         h1:{
             fontSize: "6rem",
             fontWeight: 800
+        },
+        h3:{
+            fontWeight: 500
         },
         codeLike:{
             fontFamily: "Consolas",

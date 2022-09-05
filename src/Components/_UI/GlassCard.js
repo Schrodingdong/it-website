@@ -4,17 +4,38 @@ import {motion,AnimatePresence} from "framer-motion"
 import styles from "./GlassCard.module.css"
 
 const cardAnimation = {
-    key:"glassCard",
-    initial:{ height:"0", opacity:0 },
-    animate:{height:"500px", opacity:1},
-    exit:{ height:"0", opacity:0 }
+    hide:{
+        height:0,
+        opacity:0,
+        transition:{
+            height:{
+                ease:"easeInOut",
+                delay:.5
+            }
+        }},
+    show:{
+        height:"500px",
+        opacity:1,
+        transition:{
+            height:{
+                ease:"easeInOut",
+            },
+            opacity:{
+                delay:.2
+            }
+        }}
 }
 
 const GlassCard = (props) => {
     return (
         <AnimatePresence>
             {props.isShown && (
-                <motion.div {... cardAnimation}>
+                <motion.div
+                    key={ "glassCard" }
+                    variants={ cardAnimation }
+                    initial={"hide"}
+                    animate={"show"}
+                    exit={"hide"}>
                     <Card className={styles.glassCard} sx={{ maxWidth: "lg" }}>
                         <CardMedia
                             component="img"
@@ -22,11 +43,11 @@ const GlassCard = (props) => {
                             alt="Live from space album cover"
                             className={styles.cardImage}
                         />
-                        <CardContent>
-                            <Typography gutterBottom align={"center"} variant="h3">
+                        <CardContent style={{ width:"50%" }}>
+                            <Typography gutterBottom align={"center"} variant="h3" color={"primary.dark"}>
                                 {props.year}
                             </Typography>
-                            <Typography variant="justifiedText" component={"p"} color="text.secondary">
+                            <Typography variant="justifiedText" component={"p"} color={"text.secondary"}>
                                 {props.children}
                             </Typography>
                         </CardContent>

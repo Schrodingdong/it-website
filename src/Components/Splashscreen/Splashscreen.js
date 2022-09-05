@@ -13,7 +13,7 @@ const Splashscreen = () => {
         <Container className={styles.splashscreen} maxWidth={"xl"}>
             <Box className={styles.backgroundImage}>
                 <div className={styles.overlay}></div>
-                <Carousel indicators={null}>
+                <Carousel indicators={null} className={styles.image} >
                     {[
                         <img src={itholicCeremony} alt={"itholic ceremony"}/>,
                         <img src={img2} alt={"itholic ceremony"}/>,
