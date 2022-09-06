@@ -41,7 +41,7 @@ const OurCells = () => {
     };
 
     return (
-        <div style={{width:"100%", position:"relative", margin:"6rem 0"}}>
+        <div style={{width:"100%", position:"relative", margin:"200px 0"}}>
             <Container maxWidth={"xl"}>
                 <Typography variant={"h1"} color={"primary.dark"} align={"right"}>
                     OUR <Typography variant={"span"} color={"primary"}>CELLS</Typography>

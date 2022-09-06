@@ -1,6 +1,6 @@
 .itholicSelected{
     background-size: 400% 400%!important;
-    background: linear-gradient(90deg, var(--primary-dark)  0%, var(--secondary) 100%);
+    background-image: linear-gradient(90deg, var(--primary-dark)  0%, var(--secondary) 100%)!important;
     animation: gradient 5s ease infinite;
 }
 

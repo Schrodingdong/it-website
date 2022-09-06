@@ -29,7 +29,6 @@ const tabSX = (selectedValue, tabValue) => {
     var width = (isSelected)? "100%":"90%";
     var borderColor = (isSelected)? "secondary":"divider";
     var background = (isSelected)? "linear-gradient(-90deg,rgba(231,81,255,0.05) 0%, rgba(0,0,0,0) 100% )":null;
-    var borderVertical = (tabValue === 0)? 0:"2px solid rgb(0,0,0,20%)";
     var generalStyle = (isITHOLIC)? ITHOLICSX:{
         borderRight: 2,
         background:background
@@ -56,7 +55,7 @@ const OurEvents = () => {
     };
 
     return (
-        <div style={{width:"100%", position:"relative", margin:"6rem 0"}}>
+        <div style={{width:"100%", position:"relative", margin:"200px 0"}}>
             <Container maxWidth={"xl"}>
                 <Typography variant={"h1"} color={"primary.dark"} align={"left"}>
                     OUR <Typography variant={"span"} color={"primary"}>EVENTS</Typography>

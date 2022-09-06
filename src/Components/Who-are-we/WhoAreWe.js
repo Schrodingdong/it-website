@@ -37,10 +37,10 @@ const timelineHistory = {
 
 
 const WhoAreWe = () => {
-    const [ cardYear, setCardYear ] = useState(2018)
+    const [ cardYear, setCardYear ] = useState(2022)
 
     return (
-        <div style={{width:"100%", position:"relative", margin:"6rem 0"}}>
+        <div style={{width:"100%", position:"relative", margin:"200px 0"}}>
             <Container className={styles.WhoAreWe} maxWidth={"xl"} >
                 <Box sx={{
                     display:"flex",
@@ -65,6 +65,8 @@ const WhoAreWe = () => {
                     </Box>
                 </Box>
                 <Box sx={{
+                    width:"90%",
+                    margin:"auto",
                     display:"flex",
                     flexDirection:"column",
                     justifyContent:"center",
