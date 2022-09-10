@@ -1,7 +1,7 @@
 import {Box, Container, Tab, Tabs, Typography} from "@mui/material";
 import TabContent from "../Our-cells/TabContent";
 import src from "../Our-cells/ic_sharp-model-training.png";
-import TabPanel from "../_UI/TabPanel";
+import TabPanel from "../../_UI/TabPanel";
 import {useState} from "react";
 
 import styles from "./OurEvent.module.css"
