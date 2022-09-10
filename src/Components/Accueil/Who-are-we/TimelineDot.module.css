@@ -2,13 +2,13 @@
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background: linear-gradient(45deg, var(--black) 100%, var(--black) 100%);
+    /*background: linear-gradient(45deg, var(--black) 100%, var(--black) 100%);*/
     z-index: 10;
 }
 
 .selected{
     background-size: 400% 400%!important;
-    background: linear-gradient(45deg, var(--black) 0%, var(--primary-light) 100%);
+    /*background: linear-gradient(45deg, var(--black) 0%, var(--primary-light) 100%);*/
     animation: gradient 5s ease infinite;
 }
 
