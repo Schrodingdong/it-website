@@ -108,7 +108,7 @@ const OurCells = () => {
 
     // Styling
     const tabGroupSX = {
-        width:"37%",
+        width:"35%",
         position:"absolute",
         right:0,
         top:"192px",
