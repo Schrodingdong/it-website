@@ -2,47 +2,53 @@ import {AppBar, Box, Container, Toolbar, Typography} from "@mui/material";
 import logo from "./logo.png"
 
 
-const footerDivSX = {
-    height:"550px",
-    marginTop:"300px",
-    backgroundColor:"var(--black)"
-}
-const footerSX = {
-    height: "100%",
-    position:"relative",
-    display:"flex",
-    flexDirection:"column",
-    justifyContent:"center",
-    gap:"5rem"
-}
-
-
 
 const Footer = () => {
+    // Styles :
+    const footerDivSX = {
+        height:"auto",
+        marginTop:"300px",
+        backgroundColor:"var(--black)"
+    }
+    const footerSX = {
+        height: "100%",
+        position:"relative",
+        display:"flex",
+        flexDirection:"column",
+        justifyContent:"center",
+        gap:"5rem",
+    }
+    const eitcLogoStyle = {
+        width:"300px",
+        position:"absolute",
+        top:0,
+        left:"50%",
+        transform:"translate(-50%,-50%)"
+    }
+    const contentSX = {
+        display:"flex",
+        flexDirection:"column",
+        justifyContent:"center",
+        gap:"3rem",
+        margin:"175px 0 50px 0"
+    }
+    const linkContainerSX = {
+        display:"flex",
+        flexDirection:"row",
+        flexWrap:"wrap",
+        justifyContent:"space-between",
+        gap:"2rem"
+    }
+
     return (
         <div style={footerDivSX}>
             <Container sx={footerSX}>
-                <img src={logo} style={{
-                    width:"300px",
-                    position:"absolute",
-                    top:0,
-                    left:"50%",
-                    transform:"translate(-50%,-50%)"
-                }}/>
-                <Box sx={{
-                    display:"flex",
-                    flexDirection:"column",
-                    justifyContent:"center",
-                    gap:"1rem"
-                }}>
+                <img src={logo} style={ eitcLogoStyle }/>
+                <Box sx={ contentSX }>
                     <Typography variant={"h4"} color={"white"}>
                         Get in touch ?
                     </Typography>
-                    <Box sx={{
-                        display:"flex",
-                        flexDirection:"row",
-                        justifyContent:"space-between",
-                    }}>
+                    <Box sx={ linkContainerSX }>
                         <Box>
                             <a style={{
                                 display:"flex",
@@ -91,12 +97,11 @@ const Footer = () => {
                                 </Typography>
                             </a>
                         </Box>
-
                     </Box>
+                    <Typography variant={"h6"} color={"white"} sx={{textAlign:"center"}}>
+                        © Copyright EITC
+                    </Typography>
                 </Box>
-                <Typography variant={"h4"} color={"white"} sx={{textAlign:"center"}}>
-                    © Copyright EITC
-                </Typography>
             </Container>
         </div>
     )
