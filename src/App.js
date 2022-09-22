@@ -14,7 +14,7 @@ const theme = createTheme({
             black: "#112D4E"
         },
         primary:{
-            light: "#00c3ff",
+            light: "#649be3",
             main: "#3F72AF",
             dark: "#112D4E"
         },
@@ -24,7 +24,10 @@ const theme = createTheme({
         text:{
             primary:"#112D4E",
             secondary: "rgba(17,45,78,75%)",
-            disabled: "rgba(17,45,78,50%)"
+            disabled: "rgba(17,45,78,50%)",
+            contrastPrimary:"#F9F7F7",
+            contrastSecondary: "rgba(249,247,247,0.75)",
+            contrastDisabled: "rgba(249,247,247,0.50)"
         }
     },
     typography:{
@@ -37,7 +40,7 @@ const theme = createTheme({
             background: "linear-gradient(180deg, rgba(51,106,171,1) 0%, rgba(63,114,175,1) 100%)",
         },
         h1:{
-            fontSize: "6rem",
+            fontSize: "4.2rem",
             fontWeight: 800
         },
         h3:{

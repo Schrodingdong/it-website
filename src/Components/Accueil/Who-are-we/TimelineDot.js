@@ -6,8 +6,8 @@ import styles from "./TimelineDot.module.css";
 
 const TimelineDot = (props) => {
     // Hooks
-    const [scale, setScale] = useState(1);
     const theme = useTheme();
+    const [scale, setScale] = useState(1);
     const isSelected = (props.cardYear === props.year);
     const year = props.year;
     useEffect(() => {
@@ -17,6 +17,9 @@ const TimelineDot = (props) => {
     // Functions
     const labelPlacement = (year) => {
         return (year%2 === 0)? '150%': '-200%';
+    }
+    const labelPlacementMobile = (year) => {
+        return (year%2 === 0)? '150%': '-150%';
     }
     const toggleCard = (props) => {
         props.setCardYear(
@@ -42,13 +45,18 @@ const TimelineDot = (props) => {
         position:"absolute",
         top: labelPlacement(year),
         left:"50%",
-        transform:"translateX(-50%)"
+        transform:"translateX(-50%)",
+        fontWeight:200,
+        [theme.breakpoints.down('sm')]: {
+            fontSize:"1.5rem",
+            top: labelPlacementMobile(year),
+        },
     }
     const backgroundCircleStyle = {
-        background: theme.palette.primary.dark
+        background: theme.palette.common.white
     }
     const backgroundSelectedStyle = {
-        background: "linear-gradient(45deg, "+ theme.palette.primary.dark +" 0%, "+ theme.palette.primary.main +" 100%)"
+        background: "linear-gradient(45deg, "+ theme.palette.common.white +" 0%, "+ theme.palette.secondary.main +" 100%)"
     }
 
     return (
@@ -56,7 +64,7 @@ const TimelineDot = (props) => {
                 <motion.div {... dotAnimation(scale)}
                             style={ ((isSelected)? backgroundSelectedStyle:backgroundCircleStyle) }
                             className={ styles.circle + " " + ((isSelected)? styles.selected:'') }/>
-                <Typography sx={ yearSX } variant={"h3"} color={"primary.dark"}>
+                <Typography sx={ yearSX } variant={"h4"} color={theme.palette.common.white}>
                     {year}
                 </Typography>
             </Box>
