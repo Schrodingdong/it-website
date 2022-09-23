@@ -1,7 +1,7 @@
 import {styled} from "@mui/material/styles";
 import {useState} from "react";
 
-const MainDiv = ({ children,style }) => {
+const MainDiv = ({ children,style,id }) => {
     // Styling
     const divStyle = {
         width:"100%",
@@ -12,7 +12,7 @@ const MainDiv = ({ children,style }) => {
     }
 
     return (
-        <div style={ divStyle }>
+        <div style={ divStyle } id={id}>
             { children }
         </div>
     )

@@ -59,9 +59,11 @@ const cellInfo = [
 ]
 
 const OurCells = ({ sectionId }) => {
+    // Hooks
     const [value, setValue] = useState(0);
-    const [width,setWidth] = useState(0);
+    const [width,setWidth] = useState(window.innerWidth);
     const theme = useTheme();
+    const sectionName = "cells";
     // Functions
     function a11yProps(index) {
         return {
@@ -85,7 +87,8 @@ const OurCells = ({ sectionId }) => {
             height:"100px",
             transition: ".4s",
             fontSize:"1.5rem",
-            fontWeight:"400"
+            fontWeight:"400",
+
         }
     }
     const handleChange = (event, newValue) => {
@@ -113,6 +116,7 @@ const OurCells = ({ sectionId }) => {
         return <Tab sx={{
             fontSize:"1.5rem",
             fontWeight:"400",
+            borderRadius:"10px 10px 0 0"
         }} label={el.title} {...a11yProps(index)}></Tab>
     }
 
@@ -151,45 +155,44 @@ const OurCells = ({ sectionId }) => {
         window.addEventListener("resize", () => setWidth(window.innerWidth));
     });
     return (
-        <MainDiv>
+        <MainDiv id={sectionName}>
             <Container maxWidth={"xl"}>
                 <Typography variant={"h1"} color={"primary.dark"} align={"right"} sx={sectionTitleSX}>
                     OUR <Typography variant={"span"} color={"primary"}>CELLS</Typography>
                 </Typography>
                 {
-                    width <= theme.breakpoints.values.sm ?
-                    <Box>
-                        <Tabs
-                            value={value}
-                            onChange={handleChange}
-                            variant="scrollable"
-                            scrollButtons="auto"
-                            indicatorColor="secondary"
-                            textColor="secondary"
-                            scrollButtons
-                            allowScrollButtonsMobile
-                            aria-label="scrollable auto tabs example"
-                            sx={{ margin:"auto" }}
-                        >
-                            { cellInfo.map(generateTab_Mobile) }
-                        </Tabs>
-                        { cellInfo.map(generateTabPanel) }
-                    </Box>
-                    :
-                    <Box sx={ tabBoxSX }>
-                        { cellInfo.map(generateTabPanel) }
-                        <Tabs
-                            orientation="vertical"
-                            sx={ tabGroupSX }
-                            textColor="secondary"
-                            indicatorColor="secondary"
-                            aria-label="Our cells"
-                            value={value}
-                            onChange={handleChange}
-                            TabIndicatorProps={ tabIndcatorsProps }>
-                            { cellInfo.map(generateTab) }
-                        </Tabs>
-                    </Box>
+                    width > theme.breakpoints.values.sm ?
+                        <Box sx={ tabBoxSX }>
+                            { cellInfo.map(generateTabPanel) }
+                            <Tabs
+                                orientation="vertical"
+                                sx={ tabGroupSX }
+                                textColor="secondary"
+                                indicatorColor="secondary"
+                                aria-label="Our cells"
+                                value={value}
+                                onChange={handleChange}
+                                TabIndicatorProps={ tabIndcatorsProps }>
+                                { cellInfo.map(generateTab) }
+                            </Tabs>
+                        </Box> :
+                        <Box>
+                            <Tabs
+                                value={value}
+                                onChange={handleChange}
+                                variant="scrollable"
+                                scrollButtons="auto"
+                                indicatorColor="secondary"
+                                textColor="secondary"
+                                scrollButtons
+                                allowScrollButtonsMobile
+                                aria-label="scrollable auto tabs example"
+                                sx={{ margin:"auto" }}
+                            >
+                                { cellInfo.map(generateTab_Mobile) }
+                            </Tabs>
+                            { cellInfo.map(generateTabPanel) }
+                        </Box>
                 }
 
 
