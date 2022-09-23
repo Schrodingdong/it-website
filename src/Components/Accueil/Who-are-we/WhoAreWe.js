@@ -61,7 +61,7 @@ const WhoAreWe = ({ sectionId }) => {
 
     return (
         <MainDiv>
-            <Container maxWidth={"lg"} >
+            <Container maxWidth={"xl"} >
                 <TextBox>
                     <TextWrapper>
                         <Typography variant={"h1"} color={"primary.dark"} sx={sectionTitleSX}>

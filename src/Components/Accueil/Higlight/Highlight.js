@@ -73,7 +73,7 @@ const Highlight = ({ sectionId }) => {
             backgroundPosition: "center center",
         }}>
             {/*<ParticlesBackground/>*/}
-            <Container maxWidth={"lg"}>
+            <Container maxWidth={"xl"}>
                 <TextWrapper>
                     <Typography variant={"h1"} color={theme.palette.primary.light} sx={sectionTitleSX}>
                         CLUB <Typography variant={"span"} color={theme.palette.common.white}>HIGHLIGHTS</Typography>
