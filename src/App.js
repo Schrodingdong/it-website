@@ -16,7 +16,7 @@ const theme = createTheme({
         primary:{
             light: "#649be3",
             main: "#3F72AF",
-            dark: "#112D4E"
+            dark: "#112D4E",
         },
         secondary:{
             main: "#E751FF"
@@ -37,7 +37,7 @@ const theme = createTheme({
             fontSize: "7.25rem",
             WebkitBackgroundClip: "text!important",
             WebkitTextFillColor: "transparent",
-            background: "linear-gradient(180deg, rgba(51,106,171,1) 0%, rgba(63,114,175,1) 100%)",
+            background: "-webkit-linear-gradient(#649be3,#3F72AF)",
         },
         h1:{
             fontSize: "4.2rem",

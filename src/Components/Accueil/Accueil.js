@@ -11,10 +11,10 @@ const Accueil = () => {
     return <>
         <Navbar/>
         <Splashscreen/>
-        <WhoAreWe  sectionId={1}/>
-        <Highlight sectionId={2}/>
-        <OurCells  sectionId={3}/>
-        <OurEvents sectionId={4}/>
+        <WhoAreWe  id={"WhoAreWe"} sectionId={1}/>
+        {/*<Highlight id={"Highlight"} sectionId={2}/>*/}
+        <OurCells  id={"OurCells"} sectionId={2}/>
+        <OurEvents id={"OurEvents"} sectionId={3}/>
         <Footer/>
     </>
 }

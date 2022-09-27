@@ -6,64 +6,96 @@ import src from "../static/ic_sharp-model-training.png";
 import MainDiv from "../../_UI/MainDiv";
 import {useTheme} from "@mui/material/styles";
 
+import trainingImg from './img/Open source-rafiki.svg'
+import designImg from './img/Palette-rafiki.svg'
+import eventImg from './img/Events-rafiki.svg'
+import sponsoringImg from './img/Finance-rafiki.svg'
+import cpImg from './img/pair-programming-rafiki-3057.webp'
+import mediaImg from './img/Digital tools-rafiki.svg'
+import infosecImg from './img/Hacker-rafiki.svg'
+
 const cellInfo = [
     {
         training: {
             title: "Training",
-            text: "TRAINING - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa. Phasellus imperdiet molestie risus eget ullamcorper",
-            img: src
-        }
-    },
-    {
-        design: {
-            title: "Design",
-            text: "DESIGN - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa. Phasellus imperdiet molestie risus eget ullamcorper",
-            img: src
-        }
-    },
-    {
-        event: {
-            title: "Event",
-            text: "EVENT - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa. Phasellus imperdiet molestie risus eget ullamcorper",
-            img: src
+            text: "Cette cellule se charge de l’organisation des formations dans des domaines divers dérivant de l’informatique. Il s’agit d’un environnement où les ENSIASTES peuvent partager leur savoir avec les autres en assistant à des ateliers de formations ou en les effectuant eux-mêmes.",
+            img: trainingImg
         }
     },
     {
         sposoring: {
             title: "Sponsoring",
-            text: "SPONSORING - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa. Phasellus imperdiet molestie risus eget ullamcorper",
-            img: src
+            text: "Son rôle prépondérant consiste à " +
+                "contacter les sponsors et les collaborateurs et les convaincre de nous fournir " +
+                "un appui financier afin d’assurer le bon " +
+                "déroulement de nos événements.",
+            img: sponsoringImg
+        }
+    },
+    {
+        event: {
+            title: "Event",
+            text: "Cette cellule est responsable de l’organisation des événements et le contact des " +
+                "invités. Elle assure aussi la logistique " +
+                "nécessaire au bon déroulement des " +
+                "événements.",
+            img: eventImg
         }
     },
     {
         cp: {
             title: "Competitive programming",
-            text: "CP - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa. Phasellus imperdiet molestie risus eget ullamcorper",
-            img: src
+            text: "Son rôle principal est d’aider les " +
+                "étudiants à développer leurs compétences dans la programmation compétitive et les préparer aux fameuses " +
+                "compétitions de programmation à " +
+                "travers des compétitions et des séances " +
+                "de coaching qu’elle organise tout au " +
+                "long de l’année.",
+            img: cpImg
         }
     },
     {
         media: {
             title: "Media",
-            text: "MEDIA - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa. Phasellus imperdiet molestie risus eget ullamcorper",
-            img: src
+            text: "Cette cellule a pour objectif de médiatiser les événements et les compétitions " +
+                "organisés par le club à travers les réseaux " +
+                "sociaux. Les membres de cette cellule se " +
+                "chargent aussi du contact des enseignes " +
+                "de presse et de la rédaction des articles " +
+                "et des communiqués de presse.",
+            img: mediaImg
+        }
+    },
+    {
+        design: {
+            title: "Design",
+            text: "Cette cellule consiste à cultiver l’esprit " +
+                "créatif chez ses membres et les aider à " +
+                "maîtriser les outils du design. Elle se " +
+                "charge aussi de la création des affiches " +
+                "qui sont indispensables dans la médiatisation des événements du club.",
+            img: designImg
         }
     },
     {
         infosec: {
             title: "Infosec",
-            text: "INFOSEC - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa. Phasellus imperdiet molestie risus eget ullamcorper",
-            img: src
+            text: "Cette cellule vise principalement à " +
+                "élargir les horizons de ses membres dans " +
+                "le domaine de la sécurité informatique à " +
+                "travers les workshops, les compétitions " +
+                "et les formations qu’elle organise tout au " +
+                "long de l’anné",
+            img: infosecImg
         }
     }
 ]
 
-const OurCells = ({ sectionId }) => {
+const OurCells = ({ id,sectionId }) => {
     // Hooks
     const [value, setValue] = useState(0);
     const [width,setWidth] = useState(window.innerWidth);
     const theme = useTheme();
-    const sectionName = "cells";
     // Functions
     function a11yProps(index) {
         return {
@@ -155,7 +187,7 @@ const OurCells = ({ sectionId }) => {
         window.addEventListener("resize", () => setWidth(window.innerWidth));
     });
     return (
-        <MainDiv id={sectionName}>
+        <MainDiv id={id}>
             <Container maxWidth={"xl"}>
                 <Typography variant={"h1"} color={"primary.dark"} align={"right"} sx={sectionTitleSX}>
                     OUR <Typography variant={"span"} color={"primary"}>CELLS</Typography>

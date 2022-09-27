@@ -9,7 +9,7 @@ import cardImage1 from "../../../static/img/rr.jpg"
 import cardImage2 from "../../../static/img/49022249_1125614244278950_7211991186590924800_n.jpg"
 import MainDiv from "../../_UI/MainDiv";
 
-const WhoAreWe = ({ sectionId }) => {
+const WhoAreWe = ({ id,sectionId }) => {
     // Hooks
     // const [ cardYear, setCardYear ] = useState(2022);
     const theme = useTheme();
@@ -60,7 +60,7 @@ const WhoAreWe = ({ sectionId }) => {
     }
 
     return (
-        <MainDiv>
+        <MainDiv id={id}>
             <Container maxWidth={"xl"} >
                 <TextBox>
                     <TextWrapper>

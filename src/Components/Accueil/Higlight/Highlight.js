@@ -36,7 +36,7 @@ const timelineHistory = {
 }
 
 
-const Highlight = ({ sectionId }) => {
+const Highlight = ({ id,sectionId }) => {
     const [ cardYear, setCardYear ] = useState(2022);
     const theme = useTheme();
 
@@ -65,7 +65,7 @@ const Highlight = ({ sectionId }) => {
         // },
     }));
     return (
-        <MainDiv style={{
+        <MainDiv id={id} style={{
             backgroundImage: `url(${bg})`,
             backgroundColor: theme.palette.primary.dark,
             backgroundRepeat: "no-repeat",

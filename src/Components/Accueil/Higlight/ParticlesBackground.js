@@ -18,7 +18,9 @@ const ParticlesBackground = () => {
             width:"100%",
             height:"100%",
             position: "absolute",
-            overflow:"hidden"
+            overflow:"hidden",
+            zIndex:-1,
+            background:"-webkit-linear-gradient(#112D4E,#04172f)"
         }}>
             <Particles
                 id="tsparticles"
