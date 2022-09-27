@@ -1,12 +1,7 @@
 import {Box, Container, Typography} from "@mui/material";
 import { styled } from "@mui/material/styles";
-import {useState} from "react";
 import { useTheme } from '@mui/material/styles';
-import Timeline from "./Timeline";
-import GlassCard from "../../_UI/GlassCard";
 import logo from "./img/logo.png";
-import cardImage1 from "../../../static/img/rr.jpg"
-import cardImage2 from "../../../static/img/49022249_1125614244278950_7211991186590924800_n.jpg"
 import MainDiv from "../../_UI/MainDiv";
 
 const WhoAreWe = ({ id,sectionId }) => {
@@ -69,7 +64,11 @@ const WhoAreWe = ({ id,sectionId }) => {
                         </Typography>
                         <Box sx={ mainParagraphSX }>
                             <Typography  variant={"justifiedText"} color={"text.primary"}>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa. Phasellus imperdiet molestie risus eget ullamcorper.</p>
+                                <p>
+                                    EITC n'est pas qu'un simple club IT, mais une communauté d'élèves ingénieurs et de lauréats, liés par leur passion de l'IT.
+                                    Notre club suit la philosophie du partage : Nous somme à la fois la source et les consommateurs d'information.
+                                    Chacun complète le savoir de l'autre, et tous ensemble nous formons une entité dédiée à l'IT et aux nouvelles technologies.
+                                </p>
                             </Typography>
                         </Box>
                     </TextWrapper>
