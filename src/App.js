@@ -4,7 +4,7 @@ import {BrowserRouter, Route, Routes } from "react-router-dom";
 import Accueil from "./Components/Accueil/Accueil";
 import Event from "./pages/Events";
 import MeetTheTeam from "./pages/MeetTheTeam";
-import Itholic from "./pages/Itholic";
+import Itholic from "./Components/Itholic/Itholic";
 
 import { createTheme,ThemeProvider } from "@mui/material";
 const theme = createTheme({

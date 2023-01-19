@@ -2,7 +2,6 @@ import {Box, Container, Tabs, Tab, Typography} from "@mui/material";
 import {useEffect, useState} from "react";
 import TabContent from "./TabContent";
 import TabPanel from "../../_UI/TabPanel";
-import src from "../static/ic_sharp-model-training.png";
 import MainDiv from "../../_UI/MainDiv";
 import {useTheme} from "@mui/material/styles";
 
@@ -12,20 +11,21 @@ import eventImg from './img/Events-rafiki.svg'
 import sponsoringImg from './img/Finance-rafiki.svg'
 import cpImg from './img/pair-programming-rafiki-3057.webp'
 import mediaImg from './img/Digital tools-rafiki.svg'
-import infosecImg from './img/Hacker-rafiki.svg'
 
 const cellInfo = [
     {
         training: {
             title: "Training",
-            text: "Cette cellule se charge de l’organisation des formations dans des domaines divers dérivant de l’informatique. Il s’agit d’un environnement où les ENSIASTES peuvent partager leur savoir avec les autres en assistant à des ateliers de formations ou en les effectuant eux-mêmes.",
+            text: "La cellule TRAINING se charge de l’organisation des formations dans des domaines divers dérivant de l’informatique : cloud, sécurité, devops, ... " +
+                "Il s’agit d’un environnement où les ENSIASTES peuvent partager leur savoir avec les autres en assistant " +
+                "à des ateliers de formations ou en les effectuant eux-mêmes.",
             img: trainingImg
         }
     },
     {
         sposoring: {
             title: "Sponsoring",
-            text: "Son rôle prépondérant consiste à " +
+            text: "la cellule SPONSORING possède un rôle prépondérant qui consiste à " +
                 "contacter les sponsors et les collaborateurs et les convaincre de nous fournir " +
                 "un appui financier afin d’assurer le bon " +
                 "déroulement de nos événements.",
@@ -35,29 +35,26 @@ const cellInfo = [
     {
         event: {
             title: "Event",
-            text: "Cette cellule est responsable de l’organisation des événements et le contact des " +
+            text: "La cellule EVENT est responsable de l’organisation des événements et le contact des " +
                 "invités. Elle assure aussi la logistique " +
-                "nécessaire au bon déroulement des " +
-                "événements.",
+                "nécessaire au bon déroulement des événements.",
             img: eventImg
         }
     },
     {
         cp: {
-            title: "Competitive programming",
-            text: "Son rôle principal est d’aider les " +
+            title: "competitive programming",
+            text: "La cellule CP à pour rôle principal d’aider les " +
                 "étudiants à développer leurs compétences dans la programmation compétitive et les préparer aux fameuses " +
-                "compétitions de programmation à " +
-                "travers des compétitions et des séances " +
-                "de coaching qu’elle organise tout au " +
-                "long de l’année.",
+                "compétitions de programmation à travers des compétitions et des séances " +
+                "de coaching qu’elle organise tout au long de l’année.",
             img: cpImg
         }
     },
     {
         media: {
             title: "Media",
-            text: "Cette cellule a pour objectif de médiatiser les événements et les compétitions " +
+            text: "La cellule MEDIA a pour objectif de médiatiser les événements et les compétitions " +
                 "organisés par le club à travers les réseaux " +
                 "sociaux. Les membres de cette cellule se " +
                 "chargent aussi du contact des enseignes " +
@@ -69,24 +66,12 @@ const cellInfo = [
     {
         design: {
             title: "Design",
-            text: "Cette cellule consiste à cultiver l’esprit " +
+            text: "La cellule DESIGN consiste à cultiver l’esprit " +
                 "créatif chez ses membres et les aider à " +
                 "maîtriser les outils du design. Elle se " +
                 "charge aussi de la création des affiches " +
                 "qui sont indispensables dans la médiatisation des événements du club.",
             img: designImg
-        }
-    },
-    {
-        infosec: {
-            title: "Infosec",
-            text: "Cette cellule vise principalement à " +
-                "élargir les horizons de ses membres dans " +
-                "le domaine de la sécurité informatique à " +
-                "travers les workshops, les compétitions " +
-                "et les formations qu’elle organise tout au " +
-                "long de l’anné",
-            img: infosecImg
         }
     }
 ]
