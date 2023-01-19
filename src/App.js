@@ -2,11 +2,12 @@ import React from 'react';
 
 import {BrowserRouter, Route, Routes } from "react-router-dom";
 import Accueil from "./Components/Accueil/Accueil";
-import Event from "./pages/Events";
-import MeetTheTeam from "./pages/MeetTheTeam";
 import Itholic from "./Components/Itholic/Itholic";
+// import Event from "./pages/Events";
+// import MeetTheTeam from "./pages/MeetTheTeam";
 
 import { createTheme,ThemeProvider } from "@mui/material";
+import Devjam from "./Components/Itholic/Devjam/Devjam";
 const theme = createTheme({
     palette:{
         common:{
@@ -40,7 +41,7 @@ const theme = createTheme({
             background: "-webkit-linear-gradient(#649be3,#3F72AF)",
         },
         h1:{
-            fontSize: "4.2rem",
+            fontSize: "3.5rem",
             fontWeight: 800
         },
         h3:{
@@ -67,9 +68,10 @@ const App = () => {
             <BrowserRouter>
                 <Routes>
                     <Route path={"/"} element={<Accueil/>} />
-                    <Route path={"/event"} element={<Event/>} />
-                    <Route path={"/meet-the-team"} element={<MeetTheTeam/>} />
+                    {/*<Route path={"/event"} element={<Event/>} />*/}
+                    {/*<Route path={"/meet-the-team"} element={<MeetTheTeam/>} />*/}
                     <Route path={"/itholic"} element={<Itholic/>} />
+                    <Route path={"/itholic/devjam"} element={<Devjam/>} />
                 </Routes>
             </BrowserRouter>
         </ThemeProvider>

@@ -24,7 +24,7 @@ const Splashscreen = () => {
                 {/*        }*/}
                 {/*    </Carousel>*/}
                 {/*</Box>*/}
-                <Box className={styles.frontText} textAlign={"center"} sx={{zIndex:2}}>>
+                <Box className={styles.frontText} textAlign={"center"} sx={{zIndex:2}}>
                     <Typography variant={"bigTitle"} color={"primary"} sx={{ fontSize: {xs :"4rem", sm:"7rem"} }}>ENSIAS IT CLUB</Typography>
                     <Typography variant={"codeLike"} color={"common.white"} sx={{ fontSize: {xs :"1.5rem", sm:"2rem"} }}>
                         <TypeAnimation sequence={[1000,"Where IT minds get creative"]}

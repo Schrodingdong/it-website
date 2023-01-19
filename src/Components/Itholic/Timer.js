@@ -32,13 +32,14 @@ const getReturnValues = (countDown) => {
 
 
 
-const Timer = ({ targetDate }) => {
+const Timer = ({ targetDate, dark }) => {
     //styles
     const clockContainerStyle = {
         width: "fit-content",
-        /* height: 100px; */
-        padding: "3rem 2rem",
-        border: "#ffffff60 2px solid",
+        // height: "100px",
+        padding: "2rem 1rem",
+        // border: "#ffffff60 2px solid",
+        border: dark? "#00000060 2px solid":"#ffffff60 2px solid",
         borderRadius: "1rem",
         display: "flex",
         flexDirection: "row",
@@ -46,7 +47,7 @@ const Timer = ({ targetDate }) => {
     const clockElementStyle = {
         width: "100%",
         margin: "0 1rem",
-        color: "white",
+        color: dark? "black":"white",
         display: "flex",
         flexDirection: "column",
         gap: "0"
@@ -65,7 +66,7 @@ const Timer = ({ targetDate }) => {
     } else {
         if(window.innerWidth > 550){
             return (
-                <div className='clock-container' style={clockContainerStyle}>
+                <div style={clockContainerStyle}>
                     <div style={clockElementStyle} id='days'>
                         <h1 style={centeredElement}>{days}</h1>
                         <p style={centeredElement}>Days</p>

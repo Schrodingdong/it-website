@@ -2,7 +2,6 @@ import Navbar from "../Header/Navbar";
 import {useTheme} from "@mui/material/styles";
 import bgVid from "./static/bgVid.mp4";
 import Timer from './Timer'
-import Speakers from "./speakers/Speakers";
 import {Button} from "@mui/material";
 
 const Itholic = () => {
@@ -11,6 +10,9 @@ const Itholic = () => {
 
     // styling
     const videoContainerStyle = {
+        position:"fixed",
+        top:0,
+        left:0,
         width : "100vw",
         height : "100vh",
         zIndex: -1,
@@ -62,12 +64,10 @@ const Itholic = () => {
             <h1 style={{ textAlign:"center" }}>COMING SOON</h1>
             <Timer targetDate={ new Date('2023-02-10T16:00:00') }/>
             <div style={buttonContainerStyle}>
-                <Button variant="outlined" style={buttonStyle}>Sign up for DEVJAM</Button>
+                <Button variant="outlined" style={buttonStyle} href={"itholic/devjam"}>Sign up for DEVJAM</Button>
                 <Button variant="outlined" style={buttonStyle}>Sign up for CP</Button>
             </div>
         </div>
-
-        {/*<Speakers />*/}
     </>
 }
 
