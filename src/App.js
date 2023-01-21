@@ -8,6 +8,7 @@ import Itholic from "./Components/Itholic/Itholic";
 
 import { createTheme,ThemeProvider } from "@mui/material";
 import Devjam from "./Components/Itholic/Devjam/Devjam";
+import Cp from "./Components/Itholic/Cp/Cp";
 const theme = createTheme({
     palette:{
         common:{
@@ -72,6 +73,7 @@ const App = () => {
                     {/*<Route path={"/meet-the-team"} element={<MeetTheTeam/>} />*/}
                     <Route path={"/itholic"} element={<Itholic/>} />
                     <Route path={"/itholic/devjam"} element={<Devjam/>} />
+                    <Route path={"/itholic/cp"} element={<Cp/>} />
                 </Routes>
             </BrowserRouter>
         </ThemeProvider>

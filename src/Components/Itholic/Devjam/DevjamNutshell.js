@@ -21,10 +21,10 @@ const DevjamNutshell = () => {
         <Box sx={ mainParagraphSX }>
             <Typography variant={"justifiedText"} color={"black"}>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan
-                    tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum
-                    scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa.
-                    Phasellus imperdiet molestie risus eget ullamcorper.
+                    DEVJAM is a competition where teams of 3 to 6 people will create a working prototype within the
+                    period on 1 week that answers the thematic that we will annouce once the competition will start at
+                    the 1st of February.  Once the time period ends the competing teams will send multiple delivrables
+                    to be judged and eventually win the competition !
                 </p>
             </Typography>
         </Box>

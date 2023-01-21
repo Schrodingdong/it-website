@@ -6,8 +6,9 @@ import {Box, Button, Typography} from "@mui/material";
 import DevjamNutshell from "./DevjamNutshell";
 import Theme from "./Theme";
 import React from "react";
-import Rules from "./Rules";
-import Rating from "./Rating";
+import Rules from "../Rules";
+import Rating from "../Rating";
+import Socials from "../Socials";
 
 const Devjam = () => {
     const theme = useTheme();
@@ -59,11 +60,29 @@ const Devjam = () => {
         justifyContent:"center",
         gap:"3rem"
     }
+
+    // content
+    const rulesContent = {
+        text:""+
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan" +
+            "tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum" +
+            "scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa." +
+            "Phasellus imperdiet molestie risus eget ullamcorper."
+    }
+    const ratingContent = {
+        text:""+
+            "RATING DAVJAM - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan" +
+            "tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum" +
+            "scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa." +
+            "Phasellus imperdiet molestie risus eget ullamcorper."
+    }
+
+
     return <>
         <Navbar/>
         {/* VIDEO PLAYER FOR BACKGROUND THINGY*/}
         <div style={ videoContainerStyle }>
-            <video autoPlay loop muted playsInline  className='background-video' style={ backgroundVideoStyle }>
+            <video autoPlay loop muted playsInline style={ backgroundVideoStyle }>
                 <source src={ bgVid } type='video/mp4' />
             </video>
         </div>
@@ -72,17 +91,18 @@ const Devjam = () => {
             <div id="title-text">
                 <Typography variant={"h1"} sx={{ color:"white",fontSize: {xs :"4rem", sm:"7rem"},textAlign:"center" }}>DEVJAM</Typography>
                 {/*<h1 style={{textAlign:"center",margin:"1rem 0",fontSize:"7rem"}}>DEVJAM</h1>*/}
-                <p style={{textAlign:"center",margin:"0 0 5rem 0",fontSize:"1.3rem"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna </p>
+                <p style={{textAlign:"center",margin:"0 0 5rem 0",fontSize:"1.3rem"}}>From Concept to Creation, unleash your IT MIND</p>
             </div>
             <Box id={"devjam-info"} sx={devjamInfoStyle}>
                 <Timer targetDate={new Date('2023-02-01T08:00:00')} dark/>
-                <Button variant="contained" >
+                <Button variant="contained" href={"https://docs.google.com/forms/d/1KsKnxalgPh8hY-HYTAPSNtRymzjK-lt3hOoLujsR-wM"} >
                     <h2 style={{margin:"10px"}}>Join the JAM !</h2>
                 </Button>
                 <DevjamNutshell/>
                 <Theme/>
-                <Rules/>
-                <Rating/>
+                <Rules content={rulesContent}/>
+                <Rating content={ratingContent}/>
+                <Socials/>
             </Box>
         </Box>
 

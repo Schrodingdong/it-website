@@ -2,11 +2,13 @@ import Navbar from "../Header/Navbar";
 import {useTheme} from "@mui/material/styles";
 import bgVid from "./static/bgVid.mp4";
 import Timer from './Timer'
-import {Button} from "@mui/material";
+import {Button, Tooltip} from "@mui/material";
+import {useState} from "react";
 
 const Itholic = () => {
     // theme instance
     const theme = useTheme();
+    const [notActive, setNotActive] = useState(true);
 
     // styling
     const videoContainerStyle = {
@@ -48,7 +50,9 @@ const Itholic = () => {
         color:"white",
         borderColor:"#ffffff60"
     }
-
+    const disabledButtonStyle = {
+        color:"gray"
+    }
 
     return <>
         <Navbar/>
@@ -64,8 +68,8 @@ const Itholic = () => {
             <h1 style={{ textAlign:"center" }}>COMING SOON</h1>
             <Timer targetDate={ new Date('2023-02-10T16:00:00') }/>
             <div style={buttonContainerStyle}>
-                <Button variant="outlined" style={buttonStyle} href={"itholic/devjam"}>Sign up for DEVJAM</Button>
-                <Button variant="outlined" style={buttonStyle}>Sign up for CP</Button>
+                <Button variant="outlined" style={{...buttonStyle,...disabledButtonStyle}} href={"itholic/devjam"} disabled>Comming soon !</Button>
+                <Button variant="outlined" style={buttonStyle} href={"itholic/cp"}>Sign up for CP</Button>
             </div>
         </div>
     </>

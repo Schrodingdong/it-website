@@ -1,5 +1,7 @@
 import {Box, Typography} from "@mui/material";
 import {useTheme} from "@mui/material/styles";
+import bgVid from "../static/devjamBG.mp4";
+import React from "react";
 
 const Theme = () => {
     const theme = useTheme();
@@ -14,32 +16,45 @@ const Theme = () => {
         position: "relative",
     }
     const themeBox = {
+        position:"relative",
+        width: "100%",
         height:"200px",
         borderRadius:"2rem",
-        backgroundColor:"red",
+        backgroundColor:"black",
         display:"flex",
         alignItems:"center",
         justifyContent:"center",
-        background: "radial-gradient(circle, rgba(126,0,147,1) 0%, rgba(77,0,89,1) 100%)"
+        // background: "radial-gradient(circle, rgba(126,0,147,1) 0%, rgba(77,0,89,1) 100%)",
+    }
+    const backgroundVideoStyle = {
+        borderRadius:"2rem",
+        width: "100%",
+        height: "100%",
+        objectFit : "cover",
+        position : "absolute",
+        left : 0,
+        top : 0,
+        opacity : 0.5,
     }
 
-
-    return <div id={"devjam-in-a-nutshell"}>
+    return <div id={"theme"}>
         <Typography variant={"h1"} color={"primary.dark"} sx={sectionTitleSX}>
             <Typography variant={"span"} color={"primary"}>THEME</Typography>
         </Typography>
         <Box sx={ mainParagraphSX }>
             <Box sx={ themeBox }>
-                <Typography variant={"h2"}>
+                <video autoPlay loop muted playsInline style={ backgroundVideoStyle }>
+                    <source src={ bgVid } type='video/mp4' />
+                </video>
+                <Typography variant={"h2"} style={{zIndex:1}}>
                     ?
                 </Typography>
             </Box>
             <Typography variant={"justifiedText"} color={"black"}>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie urna sit amet accumsan
-                    tincidunt. Nullam ultricies hendrerit mi, eu tempor purus. Maecenas in turpis tellus. Vestibulum
-                    scelerisque sollicitudin velit vel aliquet. Integer non velit nec enim varius auctor vitae vel massa.
-                    Phasellus imperdiet molestie risus eget ullamcorper.
+                    The theme will be unveiled at the start of the competition, that is to say the 1st of February.
+                    Note that your creations will have to follow the said theme and if possible the theme of the
+                    ITHOLIC (AR/VR)
                 </p>
             </Typography>
         </Box>
