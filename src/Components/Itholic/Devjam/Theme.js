@@ -37,7 +37,7 @@ const Theme = () => {
         opacity : 0.5,
     }
 
-    return <div id={"theme"}>
+    return <div id={"theme"} style={{ width:"100%" }}>
         <Typography variant={"h1"} color={"primary.dark"} sx={sectionTitleSX}>
             <Typography variant={"span"} color={"primary"}>THEME</Typography>
         </Typography>
@@ -51,10 +51,13 @@ const Theme = () => {
                 </Typography>
             </Box>
             <Typography variant={"justifiedText"} color={"black"}>
+                {/*<p>*/}
+                {/*    With the help of the latest cutting edge technologies like AR/VR, Web3, Cloud computing, AI and*/}
+                {/*    many more, we want YOU to help the world with the creation of a project within the lines of the*/}
+                {/*    Thematic we will unveil to you at the start of the competition, that is to say the 1st of February.*/}
+                {/*</p>*/}
                 <p>
-                    The theme will be unveiled at the start of the competition, that is to say the 1st of February.
-                    Note that your creations will have to follow the said theme and if possible the theme of the
-                    ITHOLIC (AR/VR)
+                    The theme will be annouced at the start of the contest : <b>February the 1st at 12:00</b>
                 </p>
             </Typography>
         </Box>

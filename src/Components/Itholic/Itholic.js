@@ -1,14 +1,26 @@
 import Navbar from "../Header/Navbar";
 import {useTheme} from "@mui/material/styles";
 import bgVid from "./static/bgVid.mp4";
+import itholicLogo from "./static/itholic logo.png"
 import Timer from './Timer'
-import {Button, Tooltip} from "@mui/material";
-import {useState} from "react";
+import {Button} from "@mui/material";
+import {useEffect, useState} from "react";
+import backgroundGif from "./static/bg.gif"
 
 const Itholic = () => {
+    const itholicDate = new Date('2023-02-10T08:00:00');
+    const devjamStartRegistrationDate = new Date('2023-01-24T20:30:00');
+    const cpStartRegistrationDate = new Date('2023-01-22T20:00:00');
+    const cpEndRegistrationDate = new Date('2023-02-03T23:59:59');
+    const [checkTimeRegistrationDEVJAM,setCheckTimeRegistrationDEVJAM] = useState(new Date() > devjamStartRegistrationDate);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCheckTimeRegistrationDEVJAM(new Date() > devjamStartRegistrationDate)
+        }, 1000);
+        return () => clearInterval(interval);
+    }, []);
     // theme instance
     const theme = useTheme();
-    const [notActive, setNotActive] = useState(true);
 
     // styling
     const videoContainerStyle = {
@@ -21,7 +33,7 @@ const Itholic = () => {
         // background: "linear-gradient(-45deg,  #112D4E,#3c0063)",
         // backgroundSize: "400% 400%",
         // animation: "gradient 15s ease infinite",
-        backgroundColor: "black"
+        backgroundColor: "black",
     }
     const backgroundVideoStyle = {
         width: "100%",
@@ -48,11 +60,14 @@ const Itholic = () => {
     const buttonStyle = {
         width:"50%",
         color:"white",
-        borderColor:"#ffffff60"
+        borderColor:"#ffffff60",
+        textAlign:"center"
     }
     const disabledButtonStyle = {
         color:"gray"
     }
+
+
 
     return <>
         <Navbar/>
@@ -65,11 +80,19 @@ const Itholic = () => {
 
         {/* TIMER SECTION */}
         <div style={centerContainerStyle}>
-            <h1 style={{ textAlign:"center" }}>COMING SOON</h1>
-            <Timer targetDate={ new Date('2023-02-10T16:00:00') }/>
-            <div style={buttonContainerStyle}>
-                <Button variant="outlined" style={{...buttonStyle,...disabledButtonStyle}} href={"itholic/devjam"} disabled>Comming soon !</Button>
-                <Button variant="outlined" style={buttonStyle} href={"itholic/cp"}>Sign up for CP</Button>
+            {/*<h1 style={{ textAlign:"center" }}>COMING SOON</h1>*/}
+            <img src={itholicLogo} style={{ width:"100%" }}/>
+            <div style={{ width:"fit-content", margin:"auto" }}>
+                <Timer targetDate={ itholicDate }/>
+                <div style={buttonContainerStyle}>
+                    {
+                        (checkTimeRegistrationDEVJAM)?
+                            <Button variant="outlined" style={{...buttonStyle}} href={"itholic/devjam"}>Register for DEVJAM</Button>:
+                            <Button variant="outlined" style={{...buttonStyle,...disabledButtonStyle}} href={"itholic/devjam"} disabled>Coming soon</Button>
+                    }
+
+                    <Button variant="outlined" style={buttonStyle} href={"itholic/cp"}>Register for CP</Button>
+                </div>
             </div>
         </div>
     </>

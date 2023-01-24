@@ -30,19 +30,25 @@ const getReturnValues = (countDown) => {
     return [days, hours, minutes, seconds];
 };
 
-
-
 const Timer = ({ targetDate, dark }) => {
     //styles
-    const clockContainerStyle = {
+    const clockContainerStyleWide = {
         width: "fit-content",
-        // height: "100px",
         padding: "2rem 1rem",
-        // border: "#ffffff60 2px solid",
         border: dark? "#00000060 2px solid":"#ffffff60 2px solid",
         borderRadius: "1rem",
         display: "flex",
         flexDirection: "row",
+    }
+    const clockContainerStyleNarrow = {
+        width: "fit-content",
+        /* height: 100px; */
+        padding: "2rem 1rem",
+        border: "#ffffff60 2px solid",
+        borderRadius: "1rem",
+        display: "flex",
+        flexDirection: "column",
+        gap:"1rem"
     }
     const clockElementStyle = {
         width: "100%",
@@ -66,7 +72,7 @@ const Timer = ({ targetDate, dark }) => {
     } else {
         if(window.innerWidth > 550){
             return (
-                <div style={clockContainerStyle}>
+                <div style={ clockContainerStyleWide }>
                     <div style={clockElementStyle} id='days'>
                         <h1 style={centeredElement}>{days}</h1>
                         <p style={centeredElement}>Days</p>
@@ -98,16 +104,7 @@ const Timer = ({ targetDate, dark }) => {
             )
         }
         return (
-            <div className='clock-container' style={{
-                width: "fit-content",
-                /* height: 100px; */
-                padding: "3rem 2rem",
-                border: "#ffffff60 2px solid",
-                borderRadius: "1rem",
-                display: "flex",
-                flexDirection: "column",
-                gap:"1rem"
-            }}>
+            <div className='clock-container' style={ clockContainerStyleNarrow }>
                 <div style={{ display:"flex", flexDirection:"row" }}>
                     <div style={clockElementStyle} id='days'>
                         <h1 style={centeredElement}>{days}</h1>

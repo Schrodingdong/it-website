@@ -85,11 +85,11 @@ const Cp = () => {
 
         <Box sx={centerContainerStyle}>
             <div id="title-text">
-                <Typography variant={"h1"} sx={{ color:"white",fontSize: {xs :"4rem", sm:"7rem"},textAlign:"center" }}>Competitive Programing</Typography>
+                <Typography variant={"h1"} sx={{ color:"white",fontSize: {xs :"3rem", md:"7rem"},textAlign:"center" }}>Competitive Programing</Typography>
                 <p style={{textAlign:"center",margin:"0 0 5rem 0",fontSize:"1.3rem"}}>Be the first to solve all the problems !</p>
             </div>
             <Box id={"devjam-info"} sx={devjamInfoStyle}>
-                <Timer targetDate={new Date('2023-02-11T08:00:00')} dark/>
+                <Timer targetDate={new Date('2023-02-03T08:00:00')} dark/>
                 <Button variant="contained" href={"https://forms.gle/ZdphQtLjayU5JY5CA"} target="_blank">
                     <h2 style={{ margin:"10px" }}>Register in the contest !</h2>
                 </Button>

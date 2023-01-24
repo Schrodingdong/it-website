@@ -42,7 +42,7 @@ const theme = createTheme({
             background: "-webkit-linear-gradient(#649be3,#3F72AF)",
         },
         h1:{
-            fontSize: "3.5rem",
+            fontSize: "3rem",
             fontWeight: 800
         },
         h3:{
