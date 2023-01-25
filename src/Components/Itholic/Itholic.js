@@ -87,8 +87,8 @@ const Itholic = () => {
                 <div style={buttonContainerStyle}>
                     {
                         (checkTimeRegistrationDEVJAM)?
-                            <Button variant="outlined" style={{...buttonStyle}} href={"itholic/devjam"}>Register for DEVJAM</Button>:
-                            <Button variant="outlined" style={{...buttonStyle,...disabledButtonStyle}} href={"itholic/devjam"} disabled>Coming soon</Button>
+                            <Button variant="outlined" style={{...buttonStyle}} href={"./itholic/devjam"}>Register for DEVJAM</Button>:
+                            <Button variant="outlined" style={{...buttonStyle,...disabledButtonStyle}} href={"./itholic/devjam"} disabled>Coming soon</Button>
                     }
 
                     <Button variant="outlined" style={buttonStyle} href={"itholic/cp"}>Register for CP</Button>

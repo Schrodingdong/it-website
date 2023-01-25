@@ -89,12 +89,39 @@ const Devjam = () => {
                         <li><em>- Web app.</em></li>
                         <li><em>- Mobile app.</em></li>
                     </ul>
+                </li><br/>
+                <li>
+                    <b>What happens after your submition ?</b>
+                    <ul>
+                        <li><em>We will choose The teams with the best projects to come to the ENSIAS to give a pitch
+                            and convince the judges, to get the top prize !</em></li>
+                    </ul>
                 </li>
             </ul>
     }
     const ratingContent = {
-        text:"The ranking will consist mainly on the creativity and the relation of the project with the annouced " +
-            "theme of the Devjam"
+        text:<>
+            The ranking will consist mainly on the creativity and the relation of the project with the annouced
+            theme of the DEVJAM. The selection will consist of 2 main phases :
+            <ul>
+                <li>
+                    <b>The first phase</b>
+                    <ul>
+                        <li>The first phase is where we will pick up the best projects among all of the submitions, and
+                            judge them following some specific metrics by judges from the IT field with interesting
+                            profiles.</li>
+                    </ul>
+                </li><br/>
+                <li>
+                    <b>The second phase</b>
+                    <ul>
+                        <li>The second phase will be an <b>in-person pitching at ENSIAS</b> in front of the said
+                            judges and eventually a Q&A session, where you are gonna have to convince them to be worthy
+                            of the prize !</li>
+                    </ul>
+                </li>
+            </ul>
+        </>
     }
     const prizeContent = {
         text:"Will be annouced soon ;) be sure to follow our socials !"
@@ -118,13 +145,13 @@ const Devjam = () => {
             </div>
             <Box id={"devjam-info"} sx={devjamInfoStyle}>
                 <Timer targetDate={new Date('2023-02-01T12:00:00')} dark/>
-                <Button variant="contained" href={"https://docs.google.com/forms/d/1lAlvFEnIfKedeFGK_OMRCZYCCQG-mu9Cpk6Iu_5r27o/prefill"} target={"_blank"}>
+                <Button variant="contained" href={"https://forms.gle/7WaqzftsVw5L2i9s9"} target={"_blank"}>
                     <h2 style={{margin:"10px"}}>Join the JAM !</h2>
                 </Button>
                 <DevjamNutshell/>
                 <Theme/>
                 <Rules content={rulesContent}/>
-                {/*<Rating content={ratingContent}/>*/}
+                <Rating content={ratingContent}/>
                 <Prize content={ prizeContent }/>
                 <Socials/>
             </Box>
