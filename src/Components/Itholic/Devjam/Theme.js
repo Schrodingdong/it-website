@@ -47,7 +47,7 @@ const Theme = () => {
                     <source src={ bgVid } type='video/mp4' />
                 </video>
                 <Typography variant={"h2"} style={{zIndex:1}}>
-                    ?
+                    <b>EDUCATION</b>
                 </Typography>
             </Box>
             <Typography variant={"justifiedText"} color={"black"}>

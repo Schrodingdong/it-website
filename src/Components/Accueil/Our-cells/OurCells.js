@@ -105,7 +105,6 @@ const OurCells = ({ id,sectionId }) => {
             transition: ".4s",
             fontSize:"1.5rem",
             fontWeight:"400",
-
         }
     }
     const handleChange = (event, newValue) => {

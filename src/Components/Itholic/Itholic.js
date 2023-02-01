@@ -6,6 +6,8 @@ import Timer from './Timer'
 import {Button} from "@mui/material";
 import {useEffect, useState} from "react";
 import backgroundGif from "./static/bg.gif"
+import OurSponsors from "./OurSponsors";
+
 
 const Itholic = () => {
     const itholicDate = new Date('2023-02-10T08:00:00');
@@ -24,7 +26,7 @@ const Itholic = () => {
 
     // styling
     const videoContainerStyle = {
-        position:"fixed",
+        position:"relative",
         top:0,
         left:0,
         width : "100vw",
@@ -67,8 +69,6 @@ const Itholic = () => {
         color:"gray"
     }
 
-
-
     return <>
         <Navbar/>
         {/* VIDEO PLAYER FOR BACKGROUND THINGY*/}
@@ -87,14 +87,15 @@ const Itholic = () => {
                 <div style={buttonContainerStyle}>
                     {
                         (checkTimeRegistrationDEVJAM)?
-                            <Button variant="outlined" style={{...buttonStyle}} href={"./itholic/devjam"}>Register for DEVJAM</Button>:
-                            <Button variant="outlined" style={{...buttonStyle,...disabledButtonStyle}} href={"./itholic/devjam"} disabled>Coming soon</Button>
+                            <Button variant="outlined" style={{...buttonStyle}} href={"https://ensias-it-club.netlify.app/itholic/devjam"}>Register for DEVJAM</Button>:
+                            <Button variant="outlined" style={{...buttonStyle,...disabledButtonStyle}} disabled>Coming soon</Button>
                     }
 
-                    <Button variant="outlined" style={buttonStyle} href={"itholic/cp"}>Register for CP</Button>
+                    <Button variant="outlined" style={buttonStyle} href={"https://ensias-it-club.netlify.app/itholic/cp"}>Register for CP</Button>
                 </div>
             </div>
         </div>
+        <OurSponsors/>
     </>
 }
 

@@ -11,6 +11,7 @@ import Rating from "../Rating";
 import Socials from "../Socials";
 import CircleIcon from '@mui/icons-material/Circle';
 import Prize from "../Prize";
+import cashPrize from "../static/cashPrize.png"
 
 const Devjam = () => {
     const theme = useTheme();
@@ -124,7 +125,12 @@ const Devjam = () => {
         </>
     }
     const prizeContent = {
-        text:"Will be annouced soon ;) be sure to follow our socials !"
+        text:<>
+            <Typography variant={"justifiedText"} color={"black"}>
+                The winner of the competition will receive a total prize of
+            </Typography>
+            <img src={cashPrize} style={{width:"50%",margin:"auto"}}/>
+        </>
     }
 
 
@@ -144,7 +150,7 @@ const Devjam = () => {
                 <p style={{textAlign:"center",margin:"0 0 5rem 0",fontSize:"1.3rem"}}>From Concept to Creation, unleash your IT MIND</p>
             </div>
             <Box id={"devjam-info"} sx={devjamInfoStyle}>
-                <Timer targetDate={new Date('2023-02-01T12:00:00')} dark/>
+                <Timer targetDate={new Date('2023-02-03T23:59:59')} dark/>
                 <Button variant="contained" href={"https://forms.gle/7WaqzftsVw5L2i9s9"} target={"_blank"}>
                     <h2 style={{margin:"10px"}}>Join the JAM !</h2>
                 </Button>

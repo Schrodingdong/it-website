@@ -12,6 +12,9 @@ const Prize = ({ content }) => {
     }
     const mainParagraphSX = {
         position: "relative",
+        display:"flex",
+        flexDirection:"column",
+        alignItems:"center"
     }
 
     return <div id={"rules"} style={{width:"100%"}}>
@@ -19,11 +22,7 @@ const Prize = ({ content }) => {
             <Typography variant={"span"} color={"primary"}>PRIZES</Typography>
         </Typography>
         <Box sx={ mainParagraphSX }>
-            <Typography variant={"justifiedText"} color={"black"}>
-                <p>
-                    { content.text }
-                </p>
-            </Typography>
+            { content.text }
         </Box>
     </div>
 }
