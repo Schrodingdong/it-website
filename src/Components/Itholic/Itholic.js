@@ -7,6 +7,7 @@ import {Button} from "@mui/material";
 import {useEffect, useState} from "react";
 import backgroundGif from "./static/bg.gif"
 import OurSponsors from "./OurSponsors";
+import Footer from "../Footer/Footer";
 
 
 const Itholic = () => {
@@ -95,7 +96,8 @@ const Itholic = () => {
                 </div>
             </div>
         </div>
-        {/*<OurSponsors/>*/}
+        <OurSponsors/>
+        <Footer/>
     </>
 }
 
