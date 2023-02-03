@@ -95,7 +95,7 @@ const Itholic = () => {
                 </div>
             </div>
         </div>
-        <OurSponsors/>
+        {/*<OurSponsors/>*/}
     </>
 }
 

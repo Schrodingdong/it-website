@@ -8,7 +8,9 @@ import Rules from "../Rules";
 import Rating from "../Rating";
 import CpNutshell from "./CpNutshell";
 import Socials from "../Socials";
-
+import Prize from "../Prize";
+import cpPrizes from "../static/cpPrizes.png"
+import cashPrize from "../static/cashPrize.png";
 const Cp = () => {
     const theme = useTheme();
 
@@ -71,8 +73,17 @@ const Cp = () => {
     const ratingContent = {
         text:""
     }
+    const cpPrize ={
+        text:<>
+            <Typography variant={"justifiedText"} color={"black"}>
+                The three winners teams will receive the following prizes
+            </Typography>
+            <img src={cpPrizes} style={{width:"80%",margin:"auto"}}/>
+        </>
+    }
 
 
+    const cpDeadline = new Date('2023-02-03T18:00:00');
 
     return <>
         <Navbar/>
@@ -89,14 +100,23 @@ const Cp = () => {
                 <p style={{textAlign:"center",margin:"0 0 5rem 0",fontSize:"1.3rem"}}>Be the first to solve all the problems !</p>
             </div>
             <Box id={"devjam-info"} sx={devjamInfoStyle}>
-                <Timer targetDate={new Date('2023-02-03T08:00:00')} dark/>
-                <Button variant="contained" href={"https://forms.gle/ZdphQtLjayU5JY5CA"} target="_blank">
-                    <h2 style={{ margin:"10px" }}>Register in the contest !</h2>
-                </Button>
+                {
+                    (cpDeadline > new Date())?<>
+                            <Timer targetDate={ cpDeadline } dark/>
+                            <Button variant="contained" href={"https://forms.gle/ZdphQtLjayU5JY5CA"} target="_blank">
+                                <h2 style={{ margin:"10px" }}>Register in the contest !</h2>
+                            </Button>
+                        </>
+                        :
+                        <Typography variant={"h1"} sx={{ color:theme.palette.primary.dark ,textAlign:"center" }}> - Registration has ended - </Typography>
+                }
+
                 <CpNutshell/>
                 <Rules content={rulesContent}/>
                 {/*<Rating content={ratingContent}/>*/}
+                <Prize content={cpPrize}/>
                 <Socials/>
+
             </Box>
         </Box>
 

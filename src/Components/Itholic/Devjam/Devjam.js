@@ -133,7 +133,7 @@ const Devjam = () => {
         </>
     }
 
-
+    const devjamDeadline = new Date('2023-02-03T23:59:59');
     return <>
         <Navbar/>
         {/* VIDEO PLAYER FOR BACKGROUND THINGY*/}
@@ -150,10 +150,16 @@ const Devjam = () => {
                 <p style={{textAlign:"center",margin:"0 0 5rem 0",fontSize:"1.3rem"}}>From Concept to Creation, unleash your IT MIND</p>
             </div>
             <Box id={"devjam-info"} sx={devjamInfoStyle}>
-                <Timer targetDate={new Date('2023-02-03T23:59:59')} dark/>
-                <Button variant="contained" href={"https://forms.gle/7WaqzftsVw5L2i9s9"} target={"_blank"}>
-                    <h2 style={{margin:"10px"}}>Join the JAM !</h2>
-                </Button>
+                {
+                    (devjamDeadline > new Date())?<>
+                            <Timer targetDate={ devjamDeadline } dark/>
+                            <Button variant="contained" href={"https://forms.gle/7WaqzftsVw5L2i9s9"} target={"_blank"}>
+                                <h2 style={{margin:"10px"}}>Join the JAM !</h2>
+                            </Button>
+                        </>
+                        :
+                        <Typography variant={"h1"} sx={{ color:theme.palette.primary.dark ,textAlign:"center" }}> - Registration has ended - </Typography>
+                }
                 <DevjamNutshell/>
                 <Theme/>
                 <Rules content={rulesContent}/>
